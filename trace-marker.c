@@ -80,8 +80,8 @@ int trace_printk(const char *fmt, ...)
 
 	if (len > 0) {
 		int written;
-		written = trace_write(tracefd, buffer, len - 1);
-		if (written != (len - 1)) {
+		written = trace_write(tracefd, buffer, len);
+		if (written != (len)) {
 			return -EIO;
 		}
 	} else {
